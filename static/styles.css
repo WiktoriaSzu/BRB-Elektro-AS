@@ -1,0 +1,130 @@
+body{
+  margin:0;
+  font:1rem/1.4 system-ui, sans-serif;
+  background:#fff;
+  color:#2A395A;
+}
+
+/* this is a shared wrapper */
+.wrap{
+  padding:0 clamp(1rem,4vw,5rem);
+}
+
+/* navbar on every page */
+.nav{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1rem clamp(1rem,4vw,5rem);
+  background:#fff;
+  border-bottom:0.0625rem solid #e5f0ff;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  color:#2A395A;
+  text-decoration:none;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.mark{
+  width:1.75rem;
+  height:1.75rem;
+  background:#2A395A;
+  border-radius:0.4rem;
+}
+
+.links{
+  display:flex;
+  gap:1.25rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.links a{
+  color:#2A395A;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.links a:hover{
+  color:#5b688c;
+}
+
+/* the call to action buttons */
+.call-to-action {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.75rem 1.25rem;
+  background:#2A395A;
+  color:#F4F4F4;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:999rem;
+  white-space:nowrap;
+}
+
+.call-to-action:hover{ 
+background:#5b688c; 
+}
+
+/* FontAwesome icons get the same color of the button */
+.cta i, .call-to-action svg{
+  color:currentColor;
+  fill:currentColor;
+}
+
+/* burger menu when small screen/mobile */
+.burger{
+  display:none;
+  margin-left:auto;
+  width:3rem;
+  height:3rem;
+  border:0.0625rem solid #e5f0ff;
+  background:#fff;
+  border-radius:0.75rem;
+  padding:0.75rem;
+}
+
+.burger span{
+  display:block;
+  height:0.125rem;
+  background:#2A395A;
+  border-radius:999rem;
+}
+
+.burger span + span{ 
+margin-top:0.4rem; 
+}
+
+/* nav dropdown on burger menu on mobiles */
+@media (max-width:40rem){
+  .burger{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:10;
+    background:#fff;
+    padding:1rem clamp(1rem,4vw,5rem);
+    flex-direction:column;
+    gap:1rem;
+    border-bottom:0.0625rem solid #e5f0ff;
+  }
+
+  .links.open{ 
+    display:flex;
+ }
+}
