@@ -232,5 +232,45 @@ margin-top:0.4rem;
     grid-template-columns: 1fr;
     margin-top: -1.5rem;
   }
-}
 
+/* about section */
+
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:3rem;
+    align-items: center;
+  }
+  
+  .about-banner h2{
+    margin: 0 0 0 0.75rem;
+    font-size: clamp(1.6.rem, 2.6vm, 2,2rem);
+  }
+
+  .about-banner p {
+    margin: 0 0 1.5rem;
+    color:#5b688c;
+    max-width: 40rem;
+  }
+
+  .about-text {
+    border:0.0634rem solid #e5f0ff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #fff;
+    max-width:34rem;
+  }
+
+  .about-span {
+    display:inline-block;
+    padding:0.35rem 0.75rem;
+    border-radius: 999rem;
+    background: #e5f0ff;
+    color:#2A395A;
+    font-weight: 600;
+    margin-bottom:0.75rem;
+  }
+
+  .about-pictures{
+  }
+}
