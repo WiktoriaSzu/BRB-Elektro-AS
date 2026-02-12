@@ -268,17 +268,8 @@ margin-top:0.4rem;
   }
 
   .about-left{
-    display:grid;
-    grid-template-columns: 10rem 1fr;
-    gap:1.25rem;
-    align-items: stretch;
-    max-width: 38rem;
-  }
-
-  .small--picture{
-    height: 100%;
-    width:100%;
-    min-height: 11.5rem;
+    display: block;
+    max-width: 34rem;
   }
 
   .about-span {
@@ -292,10 +283,8 @@ margin-top:0.4rem;
   }
 
   .about-pictures{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap:1rem;
-    align-items:start;
+    max-width: 28rem;
+    margin-left: auto;
   }
 
   .picture{
