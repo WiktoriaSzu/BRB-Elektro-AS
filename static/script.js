@@ -15,8 +15,9 @@ async function inject(id, url) {
 
 (async () => {
   await inject("navbar", "/partials/navbar.html");
-  await inject("footer", "/partials/footer.html");
+  //await inject("footer", "/partials/footer.html");
 })();
+
 
 // opening and closing the burger menu on mobile or small screen //
 document.addEventListener("click", (e) => {
