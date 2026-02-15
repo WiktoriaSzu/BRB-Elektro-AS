@@ -2,22 +2,26 @@
 /* navbar injection */
 async function inject(id, url) {
   const el = document.getElementById(id);
-  if (!el) return;
+  if (!el) {
+    console.error("No element with id:", id)
+    return;
+  }
 
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
     el.innerHTML = await res.text();
+    console.log("setting innerHTML to: ", el.innerHTML)
   } catch (err) {
     console.error("Navbar/Footer inject failed:", err);
   }
 }
 
 (async () => {
-  await inject("navbar", "/partials/navbar.html");
-  //await inject("footer", "/partials/footer.html");
+  await inject("navbar", "partials/navbar.html");
+  await inject("footer", "partials/footer.html");
+  console.log("injecting navbar!");
 })();
-
 
 // opening and closing the burger menu on mobile or small screen //
 document.addEventListener("click", (e) => {

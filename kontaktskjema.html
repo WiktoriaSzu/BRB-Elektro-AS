@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRB Elektro AS</title>
+
+  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="contact-wrapper">
+
+    <!-- Left Column (Form) -->
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+
+      <form>
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email address" required>
+        <textarea placeholder="Your message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right Column (Message) -->
+    <div class="contact-right">
+      <h2>Let’s Talk</h2>
+      <p>
+        We’re here to help with any electrical projects, installations,
+        or questions you may have. Send us a message and we’ll get back
+        to you as soon as possible.
+      </p>
+    </div>
+  </section>
+  <div id="footer"></div>¨
+<!--   <script>
+    fetch('partials/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script> -->
+  <script src="static/script.js"></script>
+</body>
+
+</html>
