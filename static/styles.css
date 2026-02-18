@@ -469,3 +469,30 @@ margin-top:0.4rem;
     max-width: 100%;
   }
 }
+
+/* about us section */
+
+.about-us{
+  padding:4rem 0;
+  background: #f4f6fb;
+}
+
+.about-us-inner{
+  width: min(60rem, 92%);
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: 1.2 fr, 0.9fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-us-text h2{
+ line-height: 1.1;
+ margin-bottom: 1.5rem;
+ color: #2A395A;
+}
+
+.about-us-media{
+  display:flex;
+  justify-content: flex-end;
+}
