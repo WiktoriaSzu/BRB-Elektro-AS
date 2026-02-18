@@ -18,8 +18,8 @@ async function inject(id, url) {
 }
 
 (async () => {
-  await inject("navbar", "partials/navbar.html");
-  await inject("footer", "partials/footer.html");
+  await inject("navbar", "../partials/navbar.html");
+  await inject("footer", "../partials/footer.html");
   console.log("injecting navbar!");
 })();
 
