@@ -469,3 +469,60 @@ margin-top:0.4rem;
     max-width: 100%;
   }
 }
+
+/*kompetanser */ 
+
+.container-kompetanser {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Left and Right Sections */
+.left-container-kompetanser,
+.right-container-kompetanser {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Placeholder background */
+.left-container-kompetanser {
+    background-color: white;
+}
+
+/* Text section */
+.right-container-kompetanser {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/*kompetanser bilder*/
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Image Box */
+.image-item {
+    background-color: white; /* Placeholder color */
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* If using real images */
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
