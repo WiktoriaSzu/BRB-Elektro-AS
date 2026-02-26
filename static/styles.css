@@ -486,9 +486,9 @@ margin-top:0.4rem;
 }
 
 .services-header{
-  text-align: center;
   max-width:46rem;
-  margin-bottom:2rem;
+  margin: 0 auto 2rem;
+  text-align: center;
 }
 
 .services-header h2{
