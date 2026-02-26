@@ -657,12 +657,5 @@ margin-top:0.4rem;
   flex-direction: row-reverse;
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 20px;
-}
+
+
