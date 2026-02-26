@@ -455,6 +455,7 @@ margin-top:0.4rem;
 @media (max-width: 35rem){
   .about-us{
     padding: 2.5rem 0 3.5rem;
+    margin-top: 0;
   }
 
   .about-us-text h2{
@@ -471,6 +472,89 @@ margin-top:0.4rem;
     border-radius:0.8rem;
   }
 }
+
+/*services section*/
+.services{
+  padding-bottom:10rem;
+  padding-top:2rem;
+  background: #fff;
+}
+
+.services-inner{
+  width:min(75rem, 92%);
+  margin: 0 auto;
+}
+
+.services-header{
+  text-align: center;
+  max-width:46rem;
+  margin-bottom:2rem;
+}
+
+.services-header h2{
+  font-size:2rem;
+  margin-bottom: 0.6rem;
+  color:#2A395A;
+}
+
+.services-header p{
+  font-size:1rem;
+  margin: 0 auto;
+  color:#2A395A;
+  line-height: 1.6;
+}
+
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+}
+
+.services-card{
+  color:#2A395A;
+  text-decoration: none;
+  padding:1.4rem;
+  border-radius: 1.1rem;
+  background:#fff;
+  text-decoration: none;
+  box-shadow: 0 0.8rem 2.5rem rgba(42, 57, 90, 0.82);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 0.1rem solid rgba(42, 57, 90, 0.82);
+  height: 100%;
+}
+
+.services-card h3{
+  color:#2A395A;
+}
+
+.services-card:hover{
+  transform: translateY(-0.2rem);
+  box-shadow: 0 1.1rem 3.5rem rgba(42, 57, 90, 0.82);
+}
+
+.services-icon{
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0.8rem;
+  display:grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom:0.9rem;
+}
+
+.services-icon i{
+  font-size: 1.35rem;
+  color:#2A395A;
+}
+
+.services-card p{
+  margin: 0;
+  color:#2A395A;
+  line-height:1.55;
+  font-size:0.98rem;
+}
+
+
 
 /*kompetanser */ 
 
