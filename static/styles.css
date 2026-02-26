@@ -193,27 +193,6 @@ margin-top:0.4rem;
   background: #5b688c;
 }
 
-/* services on the hero */
-
-.hero-services {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 0 clamp(1rem, 4vw, 5rem);
-  margin-top: -2.5rem;
-  padding-bottom: 2rem;
-}
-
-.service {
-  background: #ffffff;
-  border: 0.0625rem solid #e5f0ff;
-  border-radius: 1rem;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 600;
-  color: #2A395A;
-}
-
 /* responsive design */
 
 @media (max-width: 60rem) {
@@ -604,7 +583,6 @@ margin-top:0.4rem;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 40rem;
-  padding:2.8rem 2.2rem;
 }
 
 .trust-reasons{
