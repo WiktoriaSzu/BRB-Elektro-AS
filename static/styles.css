@@ -626,3 +626,43 @@ margin-top:0.4rem;
     object-fit: contain;
     display: block;
 }
+
+/* tidligere prosjketer*/
+
+.om-oss {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.om-ossinner {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  align-items: center;
+}
+
+.om-oss-text, .om-oss-media {
+  flex: 1;
+}
+
+.om-oss-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.om-oss.reverse .om-oss-inner {
+  flex-direction: row-reverse;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 20px;
+}
