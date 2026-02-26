@@ -553,7 +553,22 @@ margin-top:0.4rem;
   font-size:0.98rem;
 }
 
+/*responsive design*/
+@media(max-width: 56rem){
+  .services-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media(max-width: 35rem) {
+  .services{
+    padding:3rem 0;
+  }
+  
+  .services-grid{
+    grid-template-columns: 1fr;
+  }
+}
 
 /*kompetanser */ 
 
