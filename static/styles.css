@@ -31,13 +31,6 @@ body{
   white-space:nowrap;
 }
 
-.mark{
-  width:1.75rem;
-  height:1.75rem;
-  background:#2A395A;
-  border-radius:0.4rem;
-}
-
 .links{
   display:flex;
   gap:1.25rem;
@@ -53,6 +46,11 @@ body{
 
 .links a:hover{
   color:#5b688c;
+}
+
+.logo{
+  height: 4rem;
+  width: auto;
 }
 
 /* the call to action buttons */
@@ -568,6 +566,76 @@ margin-top:0.4rem;
   .services-grid{
     grid-template-columns: 1fr;
   }
+}
+
+/*why choose us section*/
+.trust-section{
+  padding: 4rem 0;
+}
+
+.trust-inner{
+  width:min(75rem, 92%);
+  margin:0 auto;
+}
+
+.trust-card{
+  background-color: #fff;
+  border-radius: 1.3rem;
+  padding:2.8rem 2.2rem;
+  border: 0.1rem solid rgba(42, 57, 90, 0.82);
+  box-shadow: 0 1.1rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+.trust-header{
+  text-align: center;
+  max-width: 52rem;
+  margin: 0 auto 2.5rem;
+}
+
+.trust-header h2{
+  color:#2A395A;
+  margin: 0 0 0.8rem;
+}
+
+.trust-header p{
+  margin: 0;
+  color:#2A395A;
+  line-height: 1.6;
+}
+
+.trust-badges
+
+.trust-line{
+  display: flex;
+  gap:0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top:1.5rem;
+}
+
+.trust-reasons{
+  display: inline-flex;
+  align-items: center;
+  gap:0.5rem;
+  padding:0.65rem 1.rem;
+  border-radius: 62rem;
+  background: #fff;
+  border: 0.1rem solid rgba(42, 57, 90, 0.82);
+  box-shadow: 0 0.8rem 2.5rem rgba(42, 57, 90, 0.82);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.trust-reasons i{
+  color:#2A395A;
+  font-size: 1.1rem;
+}
+
+.trust-cta{
+  margin-top:2rem;
+  display: flex;
+  gap:1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*kompetanser */ 
