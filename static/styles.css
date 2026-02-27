@@ -819,3 +819,51 @@ margin-top:0.4rem;
     font-size: 18px;
   }
 }
+
+/* electrician projects page */
+
+.projects-section{
+  padding: 4rem 0;
+  background:linear-gradient(180deg, #f4f6fb 0%, #ffffff 70%);
+}
+
+.projects-inner{
+  width:min(70rem, 92%);
+  margin: 0 auto;
+}
+
+.projects-inner h1{
+  color:#2A395A;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.1rem;
+}
+
+.projects-image{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+.projects-inner p{
+  max-width: 62rem;
+  color:#2A395A;
+  line-height: 1.75;
+  font-size:1rem;
+  margin: 0 0 1rem;
+} 
+
+.projects-list{
+  margin:1.5rem 0 0;
+  padding: 0;
+  max-width: 72rem;
+  display:grid;
+  gap: 0.9rem;
+}
+
+.projects-list li{
+  position: relative;
+  padding-left:1.5rem;
+  color:#2A395A;
+  line-height: 1.55;
+}
