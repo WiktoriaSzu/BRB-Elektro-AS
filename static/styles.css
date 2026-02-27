@@ -612,6 +612,62 @@ margin-top:0.4rem;
   flex-wrap: wrap;
 }
 
+/*mobile responsiveness*/
+@media(max-width:56rem){
+  .trust-card{
+    padding: 2.2rem 1.5rem;
+  }
+
+  .trust-header h2{
+    font-size: 1.9rem;
+  }
+
+  .trust-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:0.9rem;
+    justify-items: center;
+  }
+
+  .trust-reasons{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 35rem){
+
+  .trust-card{
+    padding: 2rem 1.2rem;
+  }
+
+  .trust-cards{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:0.75rem;
+    margin-top:1.25rem;
+  }
+
+  .trust-reasons{
+    width:100%;
+    justify-content: center;
+  }
+
+  .trust-cta{
+    margin-top:1.4rem;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:0.8rem;
+    width: 100%;
+  }
+
+  .trust-cta .btn{
+    width:100%;
+    display:inline-flex;
+    justify-self: center;
+  }
+}
+
 /*kompetanser */ 
 
 .container-kompetanser {
