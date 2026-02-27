@@ -135,8 +135,8 @@ margin-top:0.4rem;
   padding-bottom: 2rem;
   background:
     linear-gradient(
-      rgba(42, 57, 90, 0.82),
-      rgba(42, 57, 90, 0.82)
+      rgba(42, 57, 90, 0.7),
+      rgba(42, 57, 90, 0.7)
     ),
     url("./img/hero-example.jpg") center / cover no-repeat;
 }
