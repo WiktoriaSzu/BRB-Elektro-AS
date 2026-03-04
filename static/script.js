@@ -28,20 +28,42 @@ document.addEventListener("click", (e) => {
   const burger = document.querySelector(".burger");
   const links = document.querySelector(".links");
 
-  if (!burger || !links) return;
+  const servicesWrapper = document.querySelector(".dropdown-menu");
+  const servicesToggle = document.querySelector(".menu-toggle");
+
+  if (!links) return;
 
   // toggle the menu when clicking //
   if (e.target.closest(".burger")) {
     const open = links.classList.toggle("open");
     // for accessibility - screen readers know when menu is open //
+    if(burger) {
     burger.setAttribute("aria-expanded", open);
+    }
+    return;
   }
 
+  /* toggling services */
+  if(e.target.closest(".menu-toggle")){
+    if(window.matchMedia("(max-width:40rem)").matches){
+      e.preventDefault();
+    }
+    if(servicesWrapper && servicesToggle) {
+      const open = servicesWrapper.classList.toggle("open");
+      servicesToggle.setAttribute("aria-expanded", String(open));
+    }
+    return;
+  }
   // closes menu when a link is clicked //
   if (e.target.tagName === "A" && links.contains(e.target)) {
     links.classList.remove("open");
-    // for accessibility - screen readers know when menu is closed //
-    burger.setAttribute("aria-expanded", "false");
+    if(burger) {
+      burger.setAttribute("aria-expanded", "false");
+    }
+
+    if(servicesWrapper) {
+      servicesWrapper.classList.remove("open");
+    }
   }
 });
 

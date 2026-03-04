@@ -69,7 +69,7 @@ body{
 
 .call-to-action:hover{ 
 background:#5b688c; 
-}
+}.dropdown-menu
 
 /* FontAwesome icons get the same color of the button */
 .cta i, .call-to-action svg{
@@ -98,6 +98,62 @@ background:#5b688c;
 
 .burger span + span{ 
 margin-top:0.4rem; 
+}
+
+.dropdown-menu{
+  position:relative;
+}
+
+.menu-toggle{
+  display:inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #2A395A;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* hidden submenu */
+
+.dropdown-menu .dropdown {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width: 16rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  border:1px solid #e5f0ff;
+  padding:0.5rem;
+  z-index:20;
+}
+
+.dropdown-menu.open .dropdown{
+  display:block;
+}
+
+.dropdown-menu .dropdown a{
+  display:block;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  color:#2A395A;
+  text-decoration: none;
+}
+
+.dropdown-menu .dropdown a:hover{
+  background:#f3f7ff;
+}
+
+/*mobile dropdown services menu */
+
+@media(max-width:40rem) {
+  .dropdown-menu .dropdown{
+    position:static;
+    min-width: auto;
+    border:0;
+    padding: 0.25rem 0 0 0.75rem;
+    border-radius:0;
+  }
 }
 
 /* nav dropdown on burger menu on mobiles */
@@ -502,7 +558,29 @@ margin-top:0.4rem;
   font-size:2rem;
   margin-bottom: 0.6rem;
   color:#2A395A;
-}
+}<header class="nav">
+  <a href="/index.html" class="brand">
+    <img src="static\img\companyLogo.jpg" class="logo" alt="BRB Elektro AS">
+  </a>
+
+  <button class="burger" type="button" aria-label="Åpne meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="links" aria-label="Hovedmeny">
+    <a href="/index.html">Hjem</a>
+    <a href="/pages/services.html">Våre tjenester</a>
+    <a href="/pages/competences.html">Kompetanser</a>
+    <a href="/pages/projects.html">Tidligere prosjekter</a>
+    <a href="/pages/about.html">Om firmaet</a>
+    <a href="/pages/kontaktskjema.html">Kontakt</a>
+  </nav>
+
+  <a href="tel:+4796872665" class="btn btn-primary call-to-action">
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+    Ring oss
+  </a>
+</header>
 
 .services-header p{
   font-size:1rem;
@@ -793,4 +871,117 @@ margin-top:0.4rem;
     height: 38px;
     font-size: 18px;
   }
+}
+
+/* electrician projects page */
+
+.projects-hero{
+  width: 100%;
+  margin: 0;
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 35rem;
+  background: #e5f0ff;
+}
+
+.projects-image{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+.projects-panel{
+  background-color: #e5f0ff;
+  color:#2A395A;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:1.2rem;
+}
+
+.projects-panel h1{
+  margin:0;
+  letter-spacing: -0.1rem;
+}
+
+.projects-panel p{
+  margin:0;
+  color: #2A395A;
+  line-height: 1.55;
+  max-width: 42rem;
+}
+
+.projects-panel .btn{
+  align-self:flex-start;
+}
+
+.projects-intro{
+  padding:2.2rem 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.projects-container{
+  width:min(70rem, 92%);
+  margin: 0 auto;
+}
+
+.projects-container p{
+  margin:0;
+  color:#2A395A;
+  line-height: 1.55;
+  font-size:1.5rem;
+}
+
+.projects-info{
+  width:min(75rem, 92%);
+  margin: 0 auto;
+  padding: 3.5rem 0;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.info-image{
+  width:100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 3rem;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.10);
+}
+
+.info-content{
+  max-width: 60rem;
+}
+
+.info-content h2{
+  margin: 0 0 1rem;
+  padding-left:2rem;
+  color:#2A395A;
+  letter-spacing: -0.1rem;
+}
+
+.info-content p{
+  padding-left:2rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+
+.projects-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display:grid;
+  gap: 0.9rem;
+}
+
+.projects-list li{
+  position:relative;
+  padding-left: 2rem;
+  color:#2A395A;
+  line-height: 1.7rem;
 }
