@@ -241,16 +241,6 @@ margin-top:0.4rem;
   font-family: Arial, sans-serif;
 }
 
-.footer-heading img {
-  max-width: 180px;
-  height: auto;
-  display: block;
-}
-
-.footer-heading {
-  margin-bottom: 15px;
-}
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;              
@@ -793,4 +783,72 @@ margin-top:0.4rem;
     height: 38px;
     font-size: 18px;
   }
+}
+
+/* om oss */
+
+.om_oss-text-full {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.about-us-text-full h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.about-us-text-full p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* Employee cards grid */
+.employee-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 30px;
+}
+
+/* Individual card */
+.employee-card {
+  text-align: center;
+  padding: 25px;
+  border-radius: 16px;
+  background: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+}
+
+.employee-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.employee-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.employee-card h4 {
+  margin: 8px 0 15px;
+  color: #777;
+  font-weight: 500;
+}
+
+.employee-card p {
+  line-height: 1.6;
+}
+
+.om_oss-inner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
