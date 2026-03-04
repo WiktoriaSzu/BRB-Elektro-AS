@@ -135,8 +135,8 @@ margin-top:0.4rem;
   padding-bottom: 2rem;
   background:
     linear-gradient(
-      rgba(42, 57, 90, 0.7),
-      rgba(42, 57, 90, 0.7)
+      rgba(42, 57, 90, 0.82),
+      rgba(42, 57, 90, 0.82)
     ),
     url("./img/hero-example.jpg") center / cover no-repeat;
 }
@@ -146,7 +146,7 @@ margin-top:0.4rem;
 }
 
 .hero-text {
-  max-width: 50rem;
+  max-width: 38rem;
   color: #F4F4F4;
 }
 
@@ -161,7 +161,6 @@ margin-top:0.4rem;
   font-size: 1.125rem;
   max-width: 34rem;
 }
-
 
 /* buttons in the hero header */
 
@@ -192,6 +191,27 @@ margin-top:0.4rem;
 
 .btn-primary:hover {
   background: #5b688c;
+}
+
+/* services on the hero */
+
+.hero-services {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0 clamp(1rem, 4vw, 5rem);
+  margin-top: -2.5rem;
+  padding-bottom: 2rem;
+}
+
+.service {
+  background: #ffffff;
+  border: 0.0625rem solid #e5f0ff;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #2A395A;
 }
 
 /* responsive design */
@@ -584,6 +604,7 @@ margin-top:0.4rem;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 40rem;
+  padding:2.8rem 2.2rem;
 }
 
 .trust-reasons{
@@ -610,62 +631,6 @@ margin-top:0.4rem;
   gap:1rem;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-/*mobile responsiveness*/
-@media(max-width:56rem){
-  .trust-card{
-    padding: 2.2rem 1.5rem;
-  }
-
-  .trust-header h2{
-    font-size: 1.9rem;
-  }
-
-  .trust-cards{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap:0.9rem;
-    justify-items: center;
-  }
-
-  .trust-reasons{
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media(max-width: 35rem){
-
-  .trust-card{
-    padding: 2rem 1.2rem;
-  }
-
-  .trust-cards{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap:0.75rem;
-    margin-top:1.25rem;
-  }
-
-  .trust-reasons{
-    width:100%;
-    justify-content: center;
-  }
-
-  .trust-cta{
-    margin-top:1.4rem;
-    display:grid;
-    grid-template-columns: 1fr;
-    gap:0.8rem;
-    width: 100%;
-  }
-
-  .trust-cta .btn{
-    width:100%;
-    display:inline-flex;
-    justify-self: center;
-  }
 }
 
 /*kompetanser */ 
@@ -806,7 +771,7 @@ margin-top:0.4rem;
   }
 
   .slider {
-    height: 250px; /* Smaller height for mobile */
+    height: 250px; 
   }
 
   .about-us {
@@ -818,52 +783,4 @@ margin-top:0.4rem;
     height: 38px;
     font-size: 18px;
   }
-}
-
-/* electrician projects page */
-
-.projects-section{
-  padding: 4rem 0;
-  background:linear-gradient(180deg, #f4f6fb 0%, #ffffff 70%);
-}
-
-.projects-inner{
-  width:min(70rem, 92%);
-  margin: 0 auto;
-}
-
-.projects-inner h1{
-  color:#2A395A;
-  margin: 0 0 1.25rem;
-  letter-spacing: -0.1rem;
-}
-
-.projects-image{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:cover;
-}
-
-.projects-inner p{
-  max-width: 62rem;
-  color:#2A395A;
-  line-height: 1.75;
-  font-size:1rem;
-  margin: 0 0 1rem;
-} 
-
-.projects-list{
-  margin:1.5rem 0 0;
-  padding: 0;
-  max-width: 72rem;
-  display:grid;
-  gap: 0.9rem;
-}
-
-.projects-list li{
-  position: relative;
-  padding-left:1.5rem;
-  color:#2A395A;
-  line-height: 1.55;
 }
