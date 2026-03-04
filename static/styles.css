@@ -291,10 +291,21 @@ margin-top:0.4rem;
   /* footer */
 
 .footer {
-  background-color: #f8f9fa;
-  color: #555;
+  background-color: #2A395A;
+  color: #F4F4F4;
   padding: 60px 20px 0;
   font-family: Arial, sans-serif;
+}
+
+.footer a {
+  color: #ffffff;         
+  font-weight: 500;        
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer a:hover {
+  color: #ffd24c;          /* Accent color on hover */
 }
 
 .footer-container {
@@ -1035,4 +1046,4 @@ margin-top:0.4rem;
   padding-left: 2rem;
   color:#2A395A;
   line-height: 1.7rem;
-mar}
+}
