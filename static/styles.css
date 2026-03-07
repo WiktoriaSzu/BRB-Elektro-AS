@@ -707,19 +707,24 @@ margin-top:0.4rem;
 /*kompetanser */ 
 
 .container-kompetanser {
-    display: flex;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  min-height: 100vh;
+  width: min(75rem, 92%);
+  margin: 0 auto;
+  grid-template-columns: 1.1fr 1fr;
+  display: grid;
 }
 
 /* Left and Right Sections */
 .left-container-kompetanser,
-.right-container-kompetanser {
-    flex: 1;
+.right-container-kompetanser {               
+    padding: 80px 60px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
     align-items: center;
     justify-content: center;
-    padding: 40px;
 }
 
 /* Placeholder background */
@@ -738,10 +743,8 @@ margin-top:0.4rem;
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 15px;
     width: 100%;
-    height: 100%;
 }
 
 /* Individual Image Box */
@@ -759,6 +762,12 @@ margin-top:0.4rem;
     height: 100%;
     object-fit: contain;
     display: block;
+}
+
+@media (max-width: 900px) {
+  .container-kompetanser {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*sliding pictures*/
