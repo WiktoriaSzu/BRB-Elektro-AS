@@ -794,6 +794,10 @@ margin-top:0.4rem;
 
 /* kompetanser modal */
 
+.cert-trigger:hover{
+  cursor: pointer;
+}
+
 .modal {
   display: none;
   position: fixed;
