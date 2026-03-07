@@ -370,28 +370,32 @@ margin-top:0.4rem;
 }
 
 /*kontakt skjema */
-/* Main layout */
+
 .contact-wrapper {
   display: flex;
   min-height: 100vh;
+  width: min(75rem, 92%);
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
 }
 
-/* Both columns equal */
+
 .contact-left,
 .contact-right {
-  flex: 1;                /* EXACT 50/50 split */
+  flex: 1;               
   padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Divider in the exact middle */
+
 .contact-left {
   border-right: 1px solid #e0e0e0;
 }
 
-/* Form styling */
+
 .contact-left form {
   max-width: 400px;
 }
