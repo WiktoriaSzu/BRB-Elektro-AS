@@ -764,11 +764,7 @@ margin-top:0.4rem;
     display: block;
 }
 
-@media (max-width: 900px) {
-  .container-kompetanser {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /*sliding pictures*/
 
@@ -887,15 +883,17 @@ margin-top:0.4rem;
 
 /* Employee cards grid */
 .employee-cards {
+  width: min(75rem, 92%);
+  margin: 30px auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
-  margin: 30px;
+  justify-items: center;
 }
 
 /* Individual card */
 .employee-card {
-  text-align: center;
+  align-items: center;
   padding: 25px;
   border-radius: 16px;
   background: #f9f9f9;
@@ -930,9 +928,13 @@ margin-top:0.4rem;
 }
 
 .om_oss-inner {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  width: min(75rem, 92%);
+  margin: 0 auto;
+  display:grid;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 
