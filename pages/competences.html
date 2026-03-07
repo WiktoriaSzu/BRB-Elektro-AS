@@ -29,16 +29,16 @@
                  <img src="../static/img/startbank-kompetanser.jpg" alt="Description"></a>
             </div>
             <div class="image-item">
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                 <img src="../static/img/sentralgodkjent-kompetanser.jpg" alt="Description"></a>
+                 <img src="../static/img/sentralgodkjent-kompetanser.jpg" alt="Cert" class="cert-trigger"
+                 data-cert="../static/img/godkjenning-cert.png">
             </div>
             <div class="image-item">
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                 <img src="../static/img/bvn-kompetanser.jpg" alt="Description"></a>
+                 <img src="../static/img/bvn-kompetanser.jpg" alt="Cert" class="cert-trigger"
+                 data-cert="../static/img/Kursbevis.png">
             </div>
             <div class="image-item">
-                <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-                 <img src="../static/img/dsb-kompetanser.jpg" alt="Description"></a>
+                 <img src="../static/img/dsb-kompetanser.jpg" alt="Cert" class="cert-trigger"
+                 data-cert="../static/img/dsb-cert.png">
             </div>
         </div>
     </div>
@@ -63,7 +63,11 @@
         </div>
     </div>
 </div>
-<div id="footer"></div>¨
+<div id="certificateModal" class="modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+<div id="footer"></div>
 <!--   <script>
     fetch('partials/footer.html')
       .then(response => response.text())

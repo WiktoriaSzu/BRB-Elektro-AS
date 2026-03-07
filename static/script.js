@@ -1,4 +1,6 @@
 
+console.log("TEsting!")
+
 /* navbar injection */
 async function inject(id, url) {
   const el = document.getElementById(id);
@@ -37,18 +39,18 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".burger")) {
     const open = links.classList.toggle("open");
     // for accessibility - screen readers know when menu is open //
-    if(burger) {
-    burger.setAttribute("aria-expanded", open);
+    if (burger) {
+      burger.setAttribute("aria-expanded", open);
     }
     return;
   }
 
   /* toggling services */
-  if(e.target.closest(".menu-toggle")){
-    if(window.matchMedia("(max-width:40rem)").matches){
+  if (e.target.closest(".menu-toggle")) {
+    if (window.matchMedia("(max-width:40rem)").matches) {
       e.preventDefault();
     }
-    if(servicesWrapper && servicesToggle) {
+    if (servicesWrapper && servicesToggle) {
       const open = servicesWrapper.classList.toggle("open");
       servicesToggle.setAttribute("aria-expanded", String(open));
     }
@@ -57,11 +59,11 @@ document.addEventListener("click", (e) => {
   // closes menu when a link is clicked //
   if (e.target.tagName === "A" && links.contains(e.target)) {
     links.classList.remove("open");
-    if(burger) {
+    if (burger) {
       burger.setAttribute("aria-expanded", "false");
     }
 
-    if(servicesWrapper) {
+    if (servicesWrapper) {
       servicesWrapper.classList.remove("open");
     }
   }
@@ -88,4 +90,32 @@ document.querySelectorAll(".slider").forEach(slider => {
     current = (current - 1 + slides.length) % slides.length;
     showSlide(current);
   });
+
 });
+
+
+/* kompetanser modals */
+
+const modal = document.getElementById("certificateModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".close-modal");
+
+console.log("Trying to add click on image")
+document.querySelectorAll(".cert-trigger").forEach(img => {
+  console.log("Adding click listener to image")
+  img.addEventListener("click", () => {
+    console.log("I was clicked!")
+    modal.style.display = "flex";
+    modalImg.src = img.dataset.cert;
+  });
+});
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
