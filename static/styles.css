@@ -735,13 +735,13 @@ margin-top:0.4rem;
 /*projects section on main */
 
 .projects-display{
-  padding: 4rem 1.5rem;
+  padding: 4rem 0rem;
   background: linear-gradient(135deg, #f4f6fb 0%, #e9eef8 100%);
 }
 
 .projects-display h2{
   text-align: center;
-  margin: 0 0 2rem;
+  margin: 0 0 0.5rem;
   color:#2A395A;
 }
 
