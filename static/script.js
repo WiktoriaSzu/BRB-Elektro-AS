@@ -63,9 +63,7 @@ document.addEventListener("click", (e) => {
       burger.setAttribute("aria-expanded", "false");
     }
 
-    if (servicesWrapper) {
-      servicesWrapper.classList.remove("open");
-    }
+    servicesWrapper?.classList.remove("open");
   }
 });
 

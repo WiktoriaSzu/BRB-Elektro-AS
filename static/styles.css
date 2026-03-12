@@ -69,8 +69,7 @@ body{
 
 .call-to-action:hover{ 
 background:#5b688c; 
-}.dropdown-menu
-
+}
 /* FontAwesome icons get the same color of the button */
 .cta i, .call-to-action svg{
   color:currentColor;
@@ -103,6 +102,24 @@ margin-top:0.4rem;
 .dropdown-menu{
   position:relative;
 }
+
+.dropdown{
+  display:none;
+  position: absolute;
+  top:100%;
+  left:0;
+  background: #fff;
+  border-radius: 1rem;
+  padding:0.75rem;
+  box-shadow: 0 1 rem 2 rem rgba(0, 0, 0, 0.1);
+  min-width: 14rem;
+  z-index: 10;
+}
+
+.dropdown-menu:hover .dropdown{
+  display: block;
+}
+
 
 .menu-toggle{
   display:inline-flex;
