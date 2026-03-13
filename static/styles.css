@@ -911,12 +911,11 @@ margin-top:0.4rem;
 /*kompetanser */ 
 
 .container-kompetanser {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
   min-height: 100vh;
   width: min(75rem, 92%);
   margin: 0 auto;
-  grid-template-columns: 1.1fr 1fr;
-  display: grid;
 }
 
 /* Left and Right Sections */
@@ -966,6 +965,24 @@ margin-top:0.4rem;
     height: 100%;
     object-fit: contain;
     display: block;
+}
+
+@media (max-width: 768px) {
+
+  .container-kompetanser {
+    grid-template-columns: 1fr; /* stack sections */
+  }
+
+  .left-container-kompetanser,
+  .right-container-kompetanser {
+    padding: 40px 20px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
 }
 
 /* kompetanser modal */
