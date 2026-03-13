@@ -289,7 +289,7 @@ margin-top:0.4rem;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 60px;
 }
 
@@ -337,10 +337,6 @@ margin-top:0.4rem;
   width: 18px;
 }
 
-.footer-column a:hover {
-  color: #ffd24c;
-  padding-left: 4px;
-}
 
 .footer-column p {
   line-height: 1.6;
@@ -376,7 +372,6 @@ margin-top:0.4rem;
 /*kontakt skjema */
 
 .contact-wrapper {
-  display: flex;
   min-height: 100vh;
   width: min(75rem, 92%);
   margin: 0 auto;
@@ -445,7 +440,7 @@ margin-top:0.4rem;
 /* Mobile */
 @media (max-width: 768px) {
   .contact-wrapper {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .contact-left {
@@ -457,6 +452,7 @@ margin-top:0.4rem;
   .contact-right {
     padding: 50px 30px;
     text-align: center;
+    align-items: center;
   }
 
   .contact-left form,
