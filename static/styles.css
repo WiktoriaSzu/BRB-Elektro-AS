@@ -267,12 +267,11 @@ margin-top:0.4rem;
   /* footer */
 
 .footer {
-  position: relative;
+  
   background: #2A395A;
   color: #e5e7eb;
   padding: 70px 20px 0;
   font-family: Arial, sans-serif;
-  overflow: hidden;
 }
 
 
@@ -320,9 +319,9 @@ margin-top:0.4rem;
 /*fixing forst column*/
 
 .footer-column:first-child p {
-  max-width: 75%;   
-  margin-right: auto; 
-  line-height: 1.6; 
+  max-width: 75%;   /* makes paragraph 25% shorter */
+  margin-right: auto; /* keeps it aligned left */
+  line-height: 1.6; /* maintain readability */
 }
 
 
