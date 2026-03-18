@@ -1210,7 +1210,7 @@ margin-top:0.4rem;
   }
 }
 
-/* electrician projects page */
+/* services pages */
 
 .projects-hero{
   width: 100%;
@@ -1336,10 +1336,12 @@ margin-top:0.4rem;
 }
 
 .projects-more{
-  align-items: stretch;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 10rem));
+  justify-content: center;
   gap:1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
 .projects-more-card{
@@ -1352,8 +1354,113 @@ margin-top:0.4rem;
 
 .projects-more-card p{
   margin:0;
+  padding:1rem;
   color:#2A395A;
   line-height:1.8;
   font-size:1.05rem;
 }
 
+/*responsive design*/
+@media(max-width:60rem){
+  .projects-hero{
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .projects-image{
+    height: 22rem;
+  }
+
+  .projects-panel{
+    padding:2.5rem 2rem;
+  }
+
+  .projects-info{
+    grid-template-columns: 1fr;
+    gap:2rem;
+    padding:3rem 0;
+  }
+
+  .info-content h2,
+  .info.content p,
+  .projects-list li{
+    padding-left:0;
+  }
+
+  .projects-container p{
+    font-size:1.3rem;
+  }
+
+  .projects-more{
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    max-width: 100%;
+  }
+}
+
+@media(max-width:40rem) {
+  .projects-image{
+    height: 18rem;
+  }
+
+  .projects-panel{
+    padding:2rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .projects-panel p{
+    font-size:1rem;
+    max-width: 100%;
+  }
+
+  .projects-intro{
+    padding:1.8rem 0;
+  }
+
+  .projects-container, 
+  .projects-info{
+    width(92%, 100%);
+  }
+
+  .projects-container p{
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .projects-info{
+    padding:2.5rem 0;
+    gap:1.5rem;
+  }
+
+  .info-image{
+    border-radius: 2rem;
+  }
+
+  .info-content h2{
+    margin-bottom:0.8rem;
+  }
+
+  .info-content p{
+    font-size:1rem;
+    line-height: 1.6;
+  }
+
+  .projects-list li{
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .projects-more-wrap{
+    margin-top:2rem;
+  }
+
+  .projects-more{
+    grid-template-columns: 1fr;
+    gap:1rem;
+  }
+
+  .projects-more-card p{
+    padding:0;
+    font-size:1rem;
+    line-height:1.6;
+  }
+}
