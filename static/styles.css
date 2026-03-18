@@ -289,7 +289,7 @@ margin-top:0.4rem;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr 0.8fr 1fr;
   gap: 60px;
 }
 
