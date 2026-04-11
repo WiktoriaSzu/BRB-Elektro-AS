@@ -1,7 +1,7 @@
 
+
 console.log("TEsting!")
-alert("NEW SCRIPT LOADED");
-console.log("NEW SCRIPT LOADED");
+console.log("Is anything here?")
 
 /* navbar injection */
 async function inject(id, url) {
