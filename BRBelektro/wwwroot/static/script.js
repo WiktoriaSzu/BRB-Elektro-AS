@@ -117,3 +117,16 @@ modal.onclick = (e) => {
     modal.style.display = "none";
   }
 };
+
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+fetch('/api/hello')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.message);
+  })
