@@ -1,8 +1,15 @@
 using Npgsql;
+using BRBelektro.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("Default")
+    ));
 
 var app = builder.Build();
 
@@ -11,7 +18,10 @@ app.UseStaticFiles();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
+
 app.MapGet("/api/hello", () => new { message ="Hello World!"});
+
+
 
 
 //testing database connection
