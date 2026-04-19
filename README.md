@@ -1,20 +1,56 @@
-# BRBelektro
+## Table of contents
 
-A lightweight web application built with a static frontend and a modern ASP.NET Core backend.
-The backend serves static files and exposes API endpoints connected to a PostgreSQL database.
+*  [General info](#general-information)
+*  [Live Demo](#live-demo)
+*  [Technologies](#technologies)
+*  [Feautures](#features)
+*  [Screenshots](#screenshots)
+*  [Launch](#launch)
+
+
+# Overview
+
+A responsive website built for a real client, including a contact form with backend integration and email functionality.
+
+Live Demo: https://brbelektro.no
 
 ---
 
-## 🚀 Features
+## Technologies
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* C# (.NET)
+* PostgreSQL
 
-* Static frontend (HTML, CSS, JavaScript)
-* Backend powered by .NET (ASP.NET Core)
-* REST API endpoints
-* PostgreSQL database integration
 
----
+## Features
 
-## 🧰 Requirements
+* Responsive design (desktop & mobile)
+* Navigation between multiple pages (Home, Services, Contact)
+* Contact form with backend integration
+* Data stored in a PostgreSQL database
+* Email notifications and automatic replies on form submission
+* Reusable components (navbar & footer via JS injection)
+
+
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Services Section
+![Services](screenshots/services.png)
+
+### Contact Form
+![Contact](screenshots/contact.png)
+
+### Form Submission
+![Success](./screenshots/success.png)
+
+
+## Requirements
 
 Make sure you have the following installed:
 
@@ -22,30 +58,8 @@ Make sure you have the following installed:
 * PostgreSQL (running locally or accessible remotely)
 * Git (optional, for cloning the repository)
 
----
 
-## 📦 Project Structure
-
-```
-BRB-Elektro-AS/
-│
-├── BRBelektro/
-│   ├── wwwroot/        # Static frontend files
-│   │   ├── index.html
-│   │   ├── pages/
-│   │   ├── partials/
-│   │   └── static/
-│   │
-│   ├── Program.cs      # Backend entry point
-│   ├── appsettings.json
-│   └── BRBelektro.csproj
-│
-└── BRB-Elektro-AS.sln
-```
-
----
-
-## ⚙️ Setup
+## Installation
 
 ### 1. Clone the repository
 
@@ -53,8 +67,6 @@ BRB-Elektro-AS/
 git clone <your-repo-url>
 cd BRB-Elektro-AS/BRBelektro
 ```
-
----
 
 ### 2. Configure the database
 
@@ -74,7 +86,6 @@ Make sure:
 * The database exists
 * Credentials are correct
 
----
 
 ### 3. Install dependencies
 
@@ -82,9 +93,7 @@ Make sure:
 dotnet restore
 ```
 
----
-
-## ▶️ Running the application
+## Running the application
 
 Start the backend server:
 
@@ -98,9 +107,7 @@ You should see output like:
 Now listening on: http://localhost:5212
 ```
 
----
-
-## 🌐 Access the app
+## Access the app
 
 Open your browser:
 
@@ -108,47 +115,15 @@ Open your browser:
 http://localhost:5212
 ```
 
----
+## What we learned
 
-## 🔌 API Endpoints
+* Connecting frontend forms to backend API
+* Implementing email functionality using SMTP
+* Structuring a full-stack project
+* Building responsive layouts with CSS
+* Creating reusable components using JS injection
 
-Example endpoint:
-
-```
-GET /api/test-db
-```
-
-Returns a test response from the PostgreSQL database.
-
----
-
-## 🧪 Development Notes
-
-* Static files are served from the `wwwroot` folder
-* Backend routes are defined in `Program.cs`
-* Frontend can call backend using `fetch('/api/...')`
-* No CORS setup needed when running on the same origin
-
----
-
-## 🚨 Troubleshooting
-
-### 404 on `/`
-
-* Ensure `index.html` is inside `wwwroot`
-
-### Database connection errors
-
-* Verify PostgreSQL is running
-* Check connection string values
-
-### Port already in use
-
-* Stop other running instances or change port in `launchSettings.json`
-
----
-
-## 📌 Future Improvements
+## Future Improvements
 
 * Add Entity Framework Core for structured database access
 * Implement authentication
@@ -156,6 +131,8 @@ Returns a test response from the PostgreSQL database.
 
 ---
 
-## 📝 License
+## License
 
-This project is for educational/development purposes.
+This project is proprietary and was developed for BRB Elektro AS.  
+All rights reserved. Unauthorized use, copying, or distribution of this code is not permitted.
+
