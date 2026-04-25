@@ -28,3 +28,38 @@ async function loadInquiries() {
         table.innerHTML += row;
     });
 }
+
+//adding inquiry through form
+
+async function sendInquiry(event) {
+    event.preventDefault();
+
+    const inquiry = {
+        name: document.getElementById("name").value,
+        epost: document.getElementById("email").value,
+        telefon: document.getElementById("phone").value,
+        status: "New",
+        betaling: false
+    };
+
+    try {
+        const response = await fetch("/api/inquiry", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(inquiry)
+        });
+
+        if (response.ok) {
+            alert("Inquiry saved to database!");
+            document.querySelector("form").reset();
+        } else {
+            alert("Failed to save inquiry.");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Something went wrong.");
+    }
+}
