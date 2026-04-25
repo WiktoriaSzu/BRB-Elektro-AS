@@ -39,6 +39,7 @@ public class InquiryRepository
         existing.Dato = updated.Dato;
         existing.Status = updated.Status;
         existing.Betaling = updated.Betaling;
+        existing.Beskrivelse = updated.Beskrivelse;
 
         return await _context.SaveChangesAsync();
     }
