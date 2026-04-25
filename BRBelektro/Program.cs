@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<InquiryRepository>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
-        builder.Configuration.GetConnectionString("Default")
+        builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
 var app = builder.Build();

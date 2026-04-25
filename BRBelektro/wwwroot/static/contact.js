@@ -8,7 +8,8 @@
     const data = {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
-      message: document.getElementById("message").value
+      message: document.getElementById("message").value,
+      phoneNumber: document.getElementById("phone").value
     };
     try {
       const response = await fetch("/api/contact", {
