@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BRB Elektro Admin Login</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="static/admin.css">
 </head>
 <body>
   <div class="page-section"></div>
@@ -86,7 +86,63 @@
   </form>
 </div>
 <div class="page-section"></div>
+
+<div id="editFormContainer" class="table-container form-container" style="display:none;">
+  <h2>Edit Inquiry</h2>
+
+  <form id="editForm">
+    <input type="hidden" id="editId">
+
+    <div class="form-grid">
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" id="editName" required>
+      </div>
+
+      <div class="form-row">
+        <label>Epost</label>
+        <input type="email" id="editEpost">
+      </div>
+
+      <div class="form-row">
+        <label>Telefon</label>
+        <input type="text" id="editTelefon">
+      </div>
+
+      <div class="form-row">
+        <label>Beskrivelse</label>
+        <input type="text" id="editBeskrivelse">
+      </div>
+
+      <div class="form-row">
+        <label>Date</label>
+        <input type="date" id="editDato">
+      </div>
+
+      <div class="form-row">
+        <label>Status</label>
+        <select id="editStatus">
+          <option value="Ny">Ny</option>
+          <option value="Pågår">Pågår</option>
+          <option value="Fullført">Fullført</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Betaling</label>
+        <select id="editBetaling">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" onclick="saveEditForm(event)">Save</button>
+      <button type="button" onclick="closeEditForm(event)">Cancel</button>
+    </div>
+  </form>
+</div>
 <script src="/static/app.js"></script>
-</body>
 </body>
 </html>

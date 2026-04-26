@@ -71,3 +71,79 @@ async function sendInquiry(event) {
 
 
 }
+
+//editing inquiry//
+
+
+
+
+async function fetchInquiry(id){
+    console.log("Loading inquiry with id");
+    const response = await fetch(`/api/inquiry/${id}`);
+    const data = await response.json();
+    return data;
+}
+
+async function editInquiry(id) {
+    const inquiry = await fetchInquiry(id);
+    document.getElementById("editFormContainer").style.display = "block";
+
+    document.getElementById("editId").value = inquiry.id;
+    document.getElementById("editName").value = inquiry.name;
+    document.getElementById("editEpost").value = inquiry.epost;
+    document.getElementById("editTelefon").value = inquiry.telefon;
+    document.getElementById("editBeskrivelse").value = inquiry.beskrivelse;
+    document.getElementById("editDato").value = inquiry.dato;
+    document.getElementById("editStatus").value = inquiry.status;
+    document.getElementById("editBetaling").value = inquiry.betaling;
+}
+
+//saving edit into database//
+
+async function saveEditForm(event) {
+    event.preventDefault();
+
+    const betaling = document.getElementById("editBetaling").value == "true" ?
+        true : false;
+
+    const id = document.getElementById("editId").value;
+
+    const inquiry = {
+        name: document.getElementById("editName").value,
+        epost: document.getElementById("editEpost").value,
+        telefon: document.getElementById("editTelefon").value,
+        description: document.getElementById("editBeskrivelse").value,
+        date: document.getElementById("editDato").value,
+        status: document.getElementById("editStatus").value,
+        betaling
+    };
+
+    try {
+        const response = await fetch(`/api/inquiry/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(inquiry)
+        });
+
+        if (response.ok) {
+            alert("Inquiry saved to database!");
+            document.querySelector("form").reset();
+            loadInquiries();
+            closeEditForm();
+        } else {
+            alert("Failed to save inquiry.");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Something went wrong.");
+    }
+}
+
+//closing the form //
+function closeEditForm() {
+    document.getElementById("editFormContainer").style.display = "none";
+}
+
