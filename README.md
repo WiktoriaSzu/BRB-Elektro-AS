@@ -46,8 +46,8 @@ Live Demo: https://brbelektro.no
 ### Contact Form
 ![Contact](screenshots/contact.png)
 
-### Form Submission
-![Success](./screenshots/success.png)
+### Admin Dashboard
+![Admin Dashboard](screenshots/admindashboard.webp)
 
 
 ## Requirements
