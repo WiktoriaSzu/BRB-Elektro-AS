@@ -1245,7 +1245,7 @@ margin-top:0.4rem;
 
 .info-image{
   width:100%;
-  height: auto;
+  max-height: 24rem;
   display: block;
   object-fit: cover;
   border-radius: 3rem;
@@ -1289,7 +1289,7 @@ margin-top:0.4rem;
   margin-top: 3.5rem;
 }
 
-.projects-more-wrap h2{
+.projects-more-wrap h3{
   text-align: center;
   margin: 0 0 1.25rem;
   color:#2A395A;
@@ -1313,6 +1313,10 @@ margin-top:0.4rem;
   box-shadow: 0 10px 28px rgba(42, 57, 90, 0.6);
 }
 
+.projects-more-card h3 {
+    text-align: center;
+  }
+
 .projects-more-card p{
   margin:0;
   padding:1rem;
@@ -1330,7 +1334,7 @@ margin-top:0.4rem;
   }
 
   .projects-image{
-    height: 22rem;
+    height: 20rem;
   }
 
   .projects-panel{
@@ -1341,7 +1345,6 @@ margin-top:0.4rem;
     grid-template-columns: 1fr;
     gap:1.5rem;
     padding:2.5rem 1rem;
-    width: 100%;
   }
 
   .projects-container {
