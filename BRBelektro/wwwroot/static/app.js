@@ -34,12 +34,17 @@ async function loadInquiries() {
 async function sendInquiry(event) {
     event.preventDefault();
 
+    const betaling = document.getElementById("payment").value == "true" ?
+        true : false;
+
     const inquiry = {
         name: document.getElementById("name").value,
         epost: document.getElementById("email").value,
         telefon: document.getElementById("phone").value,
-        status: "New",
-        betaling: false
+        description: document.getElementById("description").value,
+        date: document.getElementById("date").value,
+        status: document.getElementById("status").value,
+        betaling
     };
 
     try {
@@ -54,6 +59,7 @@ async function sendInquiry(event) {
         if (response.ok) {
             alert("Inquiry saved to database!");
             document.querySelector("form").reset();
+            loadInquiries();
         } else {
             alert("Failed to save inquiry.");
         }
@@ -62,4 +68,6 @@ async function sendInquiry(event) {
         console.error(error);
         alert("Something went wrong.");
     }
+
+
 }
