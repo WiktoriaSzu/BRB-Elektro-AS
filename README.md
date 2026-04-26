@@ -70,15 +70,17 @@ cd BRB-Elektro-AS/BRBelektro
 
 ### 2. Configure the database
 
-Edit `appsettings.json` and update the connection string:
+This project uses [.NET User Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to manage the database connection string locally. It is not committed to the repository.
 
+Before running the project for the first time, navigate to the project folder and run:
+
+```bash
+cd BRBelektro
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Host=localhost;Port=5400;Database=brbelektro;Username=postgres;Password=YOUR_PASSWORD"
 ```
-{
-  "ConnectionStrings": {
-    "Default": "Host=localhost;Port=5432;Database=your_db;Username=your_user;Password=your_password"
-  }
-}
-```
+
+Replace `YOUR_PASSWORD` with your local PostgreSQL password.
 
 Make sure:
 
