@@ -64,8 +64,8 @@ async function sendInquiry(event) {
         name: document.getElementById("name").value,
         epost: document.getElementById("email").value,
         telefon: document.getElementById("phone").value,
-        description: document.getElementById("description").value,
-        date: document.getElementById("date").value,
+        beskrivelse: document.getElementById("description").value,
+        dato: document.getElementById("date").value,
         status: document.getElementById("status").value,
         betaling
     };
@@ -109,7 +109,7 @@ async function fetchInquiry(id){
 
 async function editInquiry(id) {
     const inquiry = await fetchInquiry(id);
-    document.getElementById("editFormContainer").style.display = "block";
+    document.getElementById("modalOverlay").style.display = "flex";
 
     document.getElementById("editId").value = inquiry.id;
     document.getElementById("editName").value = inquiry.name;
@@ -135,8 +135,8 @@ async function saveEditForm(event) {
         name: document.getElementById("editName").value,
         epost: document.getElementById("editEpost").value,
         telefon: document.getElementById("editTelefon").value,
-        description: document.getElementById("editBeskrivelse").value,
-        date: document.getElementById("editDato").value,
+        beskrivelse: document.getElementById("editBeskrivelse").value,
+        dato: document.getElementById("editDato").value,
         status: document.getElementById("editStatus").value,
         betaling
     };
@@ -166,7 +166,16 @@ async function saveEditForm(event) {
 }
 
 //closing the form //
-function closeEditForm() {
-    document.getElementById("editFormContainer").style.display = "none";
+function closeEditForm(e) {
+    if (e) e.preventDefault();
+    document.getElementById("modalOverlay").style.display = "none";
 }
+
+//close edit inquiry modal//
+
+document.getElementById("modalOverlay").addEventListener("click", function(e) {
+    if (e.target === this) {
+        this.style.display = "none";
+    }
+});
 
