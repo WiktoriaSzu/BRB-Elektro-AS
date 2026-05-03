@@ -29,6 +29,27 @@ async function loadInquiries() {
     });
 }
 
+
+async function deleteInquiry(id) {
+    try {
+        const response = await fetch(`/api/inquiry/${id}`, {
+            method: "DELETE",
+        });
+
+        if (response.ok) {
+            alert("Inquiry deleted");
+            loadInquiries();
+        } else {
+            alert("Failed to delete inquiry.");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Something went wrong.");
+    }
+
+}
+
 //adding inquiry through form
 
 async function sendInquiry(event) {
