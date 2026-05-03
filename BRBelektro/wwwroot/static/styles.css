@@ -226,7 +226,7 @@ margin-top:0.4rem;
     linear-gradient(
       rgba(42, 57, 90, 0.6)
     ),
-    url("../static/img/hero-img.jpg") center / cover no-repeat;
+    url("../static/img/worker.webp") center / cover no-repeat;
 }
 
 .hero-inner {
