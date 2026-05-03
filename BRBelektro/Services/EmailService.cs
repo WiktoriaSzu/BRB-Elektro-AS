@@ -5,9 +5,16 @@ public class EmailService
 {
     public async Task SendEmails(string customerEmail, string customerName, string message)
     {
+
+        var smtpPassword = Environment.GetEnvironmentVariable("SMTP_PASSWORD");
+
+        if(string.IsNullOrEmpty(smtpPassword))
+        {
+            throw new Exception("SMTP_PASSWORD environment variable has not been set.");
+        }
         var smtpClient = new SmtpClient("mailcluster.loopia.se", 587)
         {
-            Credentials = new NetworkCredential("arek@brbelektro.no", "YOURPASSWORD"), 
+            Credentials = new NetworkCredential("arek@brbelektro.no", smtpPassword), 
             EnableSsl = true
         };
 
