@@ -68,6 +68,35 @@ git clone <your-repo-url>
 cd BRB-Elektro-AS/BRBelektro
 ```
 
+### 2. Set environmental variables
+
+This project uses environment variables to store sensitive data. They are not included in the repository for security reasons. 
+
+Required environment variables: 
+
+```bash 
+SMTP_PASSWORD=your_email_password
+```
+This variable is used for SMTP authentication when sending emails. Each developer must set this on their own machine.
+
+#### 2.1 How to set up environment variables on Windows
+
+1. Search for Environment Variables
+2. Click Edit the system environment variables
+3. Under User variables click New
+4. Add
+Name: SMTP_PASSWORD
+Value: your_email_password
+
+Restart the application after setting the environment variables.
+
+#### 2.2 Quick Test with temporary variables
+
+```bash
+set SMTP_PASSWORD=your_email_password
+dotnet run
+```
+
 ### 2. Configure the database
 
 This project uses [.NET User Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to manage the database connection string locally. It is not committed to the repository.
