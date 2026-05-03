@@ -84,16 +84,29 @@ Replace `YOUR_PASSWORD` with your local PostgreSQL password.
 
 Make sure:
 
-* PostgreSQL is running
-* The database exists
+* [PostgreSQL](https://www.postgresql.org/download/) running locally or remotely
 * Credentials are correct
 
+Install the EF CLI tool globally:
+```bash
+dotnet tool install --global dotnet-ef --version 9.*
+```
 
-### 3. Install dependencies
+
+### Install dependencies
 
 ```
 dotnet restore
 ```
+
+### Apply database migrations
+This will create the database and all tables automatically:
+
+```bash
+dotnet ef database update
+```
+
+You should now see the database appear in pgAdmin or your preferred PostgreSQL client.
 
 ## Running the application
 
@@ -127,7 +140,6 @@ http://localhost:5212
 
 ## Future Improvements
 
-* Add Entity Framework Core for structured database access
 * Implement authentication
 * Improve frontend structure (e.g., framework integration)
 
