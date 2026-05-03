@@ -22,7 +22,8 @@ public class ContactController : ControllerBase
             Name = request.Name,
             Epost = request.Email,
             Beskrivelse = request.Message,
-            Telefon = request.PhoneNumber
+            Telefon = request.PhoneNumber,
+            Dato = DateOnly.FromDateTime(DateTime.Now)
         });
 
         try 
