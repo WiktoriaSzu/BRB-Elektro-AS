@@ -68,7 +68,7 @@ git clone <your-repo-url>
 cd BRB-Elektro-AS/BRBelektro
 ```
 
-### 2. Set environmental variables
+### 2. Set environment variables
 
 This project uses environment variables to store sensitive data. They are not included in the repository for security reasons. 
 
