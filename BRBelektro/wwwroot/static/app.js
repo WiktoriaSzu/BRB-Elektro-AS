@@ -31,6 +31,8 @@ async function loadInquiries() {
 
 
 async function deleteInquiry(id) {
+    confirm("Are you sure you want to delete inquiry?");
+
     try {
         const response = await fetch(`/api/inquiry/${id}`, {
             method: "DELETE",
