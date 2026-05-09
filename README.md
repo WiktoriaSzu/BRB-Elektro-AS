@@ -75,9 +75,14 @@ This project uses environment variables to store sensitive data. They are not in
 Required environment variables: 
 
 ```bash 
-SMTP_PASSWORD=your_email_password
+SMTP_USER= your SMTP username
+SMTP_PASSWORD= your_email_password
+SMTP_FROM_EMAIL= the adress the email will be sent from
+COMPANY_Mail= where the notification should be sent
+SMTP_HOST= e.g mailcluster.loopia.se
+SMTP_PORT= e.g 587
 ```
-This variable is used for SMTP authentication when sending emails. Each developer must set this on their own machine.
+These variables are used for SMTP authentication when sending emails. Each developer must set this on their own machine.
 
 #### 2.1 How to set up environment variables on Windows
 
@@ -85,19 +90,24 @@ This variable is used for SMTP authentication when sending emails. Each develope
 2. Click Edit the system environment variables
 3. Under User variables click New
 4. Add
-Name: SMTP_PASSWORD
-Value: your_email_password
-
-Restart the application after setting the environment variables.
+- Name: SMTP_USER, Value: your SMPT username (e.g mail@mail.com)
+- Name: SMTP_PASSWORD, Value: your SMTP password
+- Name: SMTP_FROM_EMAIL, Value: the From address (your email address)
+- Name: COMAPANY_MAIL, Value: where the notification should be sent (your email address)
+Optional if not hardcoded: SMTP_HOST, SMTP_PORT
+5. Restart the application after setting the environment variables.
 
 #### 2.2 Quick Test with temporary variables
 
 ```bash
+set SMTP_USER=your@email.com
 set SMTP_PASSWORD=your_email_password
+set SMTP_FROM_EMAIL=your@email.com
+set COMPANY_EMAIL=your@email.com
 dotnet run
 ```
 
-### 2. Configure the database
+### 3. Configure the database
 
 This project uses [.NET User Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to manage the database connection string locally. It is not committed to the repository.
 
