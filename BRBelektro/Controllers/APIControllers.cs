@@ -7,8 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
     
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
+[Authorize(Policy = "AllowedEmails")]
 [Route("api/[controller]")]
 public class InquiryController : ControllerBase
 {
