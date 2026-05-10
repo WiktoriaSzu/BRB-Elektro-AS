@@ -1,0 +1,15 @@
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<div id="g_id_onload"
+  data-client_id="745795987028-doidv34ihcj04ofnkiq4chf787pn9fvl.apps.googleusercontent.com"
+  data-callback="handleCredentialResponse">
+</div>
+<div class="g_id_signin" data-type="standard"></div>
+
+<script>
+  function handleCredentialResponse(response) {
+    // response.credential is the Google ID token (JWT)
+    sessionStorage.setItem('google_token', response.credential);
+    window.location.href = '/index2.html';
+  }
+</script>

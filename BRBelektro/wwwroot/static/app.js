@@ -34,8 +34,12 @@ async function deleteInquiry(id) {
     confirm("Are you sure you want to delete inquiry?");
 
     try {
+        const token = sessionStorage.getItem('google_token');
         const response = await fetch(`/api/inquiry/${id}`, {
             method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
         });
 
         if (response.ok) {
