@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", loadInquiries);
 
 async function loadInquiries() {
+    const token = sessionStorage.getItem('google_token');
     console.log("Loading inquiries");
-    const response = await fetch('/api/inquiry');
+    const response = await fetch('/api/inquiry', {
+        headers: { 
+            'Authorization': `Bearer ${token}`
+        }
+    });
     const data = await response.json();
 
     const table = document.getElementById("InquiryTable");
@@ -60,7 +65,6 @@ async function deleteInquiry(id) {
 
 async function sendInquiry(event) {
     event.preventDefault();
-
     const betaling = document.getElementById("payment").value == "true" ?
         true : false;
 
@@ -75,10 +79,12 @@ async function sendInquiry(event) {
     };
 
     try {
+        const token = sessionStorage.getItem('google_token');
         const response = await fetch("/api/inquiry", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(inquiry)
         });
@@ -105,13 +111,19 @@ async function sendInquiry(event) {
 
 
 async function fetchInquiry(id){
+    const token = sessionStorage.getItem('google_token');
     console.log("Loading inquiry with id");
-    const response = await fetch(`/api/inquiry/${id}`);
+    const response = await fetch(`/api/inquiry/${id}`, {
+        headers: { 
+            'Authorization': `Bearer ${token}`
+        }
+    });
     const data = await response.json();
     return data;
 }
 
 async function editInquiry(id) {
+    
     const inquiry = await fetchInquiry(id);
     document.getElementById("modalOverlay").style.display = "flex";
 
@@ -129,7 +141,6 @@ async function editInquiry(id) {
 
 async function saveEditForm(event) {
     event.preventDefault();
-
     const betaling = document.getElementById("editBetaling").value == "true" ?
         true : false;
 
@@ -146,10 +157,12 @@ async function saveEditForm(event) {
     };
 
     try {
+        const token = sessionStorage.getItem('google_token');
         const response = await fetch(`/api/inquiry/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(inquiry)
         });
