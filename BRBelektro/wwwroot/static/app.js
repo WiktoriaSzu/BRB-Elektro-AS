@@ -1,13 +1,36 @@
 document.addEventListener("DOMContentLoaded", loadInquiries);
 
-async function loadInquiries() {
+async function callApi(url, options = {}) {
     const token = sessionStorage.getItem('google_token');
-    console.log("Loading inquiries");
-    const response = await fetch('/api/inquiry', {
-        headers: { 
+    const response = await fetch(url, {
+        ...options,
+        headers: {
+            ...options.headers,
             'Authorization': `Bearer ${token}`
         }
     });
+
+    if (response.status === 401) {
+        window.location.href = '/login.html';
+    }
+    if (response.status === 403) {
+        sessionStorage.removeItem('google_token'); // clear their token
+        window.location.href = '/login.html?error=unauthorized';
+    }
+
+    return response;
+}
+
+async function loadInquiries() {
+    console.log("Loading inquiries");
+    // const token = sessionStorage.getItem('google_token');
+    // const response = await fetch('/api/inquiry', {
+    //     headers: { 
+    //         'Authorization': `Bearer ${token}`
+    //     }
+    // });
+    const response = await callApi('/api/inquiry')
+
     const data = await response.json();
 
     const table = document.getElementById("InquiryTable");
@@ -39,13 +62,16 @@ async function deleteInquiry(id) {
     confirm("Are you sure you want to delete inquiry?");
 
     try {
-        const token = sessionStorage.getItem('google_token');
-        const response = await fetch(`/api/inquiry/${id}`, {
-            method: "DELETE",
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
+        // const token = sessionStorage.getItem('google_token');
+        // const response = await fetch(`/api/inquiry/${id}`, {
+        //     method: "DELETE",
+        //     headers: {
+        //         'Authorization': `Bearer ${token}`
+        //     }
+        // });
+        const response = await callApi(`/api/inquiry/${id}`, {
+            method: "DELETE"
+        })
 
         if (response.ok) {
             alert("Inquiry deleted");
@@ -79,7 +105,7 @@ async function sendInquiry(event) {
     };
 
     try {
-        const token = sessionStorage.getItem('google_token');
+    /*    const token = sessionStorage.getItem('google_token');
         const response = await fetch("/api/inquiry", {
             method: "POST",
             headers: {
@@ -87,7 +113,14 @@ async function sendInquiry(event) {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(inquiry)
-        });
+        }); */
+        const response = await callApi("/api/inquiry", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(inquiry)
+        })
 
         if (response.ok) {
             alert("Inquiry saved to database!");
@@ -111,15 +144,17 @@ async function sendInquiry(event) {
 
 
 async function fetchInquiry(id){
-    const token = sessionStorage.getItem('google_token');
+ /*   const token = sessionStorage.getItem('google_token');
     console.log("Loading inquiry with id");
     const response = await fetch(`/api/inquiry/${id}`, {
         headers: { 
             'Authorization': `Bearer ${token}`
         }
-    });
+    }); */
+
+    const response = await callApi(`/api/inquiry/${id}`)
     const data = await response.json();
-    return data;
+    return data; 
 }
 
 async function editInquiry(id) {
@@ -157,12 +192,18 @@ async function saveEditForm(event) {
     };
 
     try {
-        const token = sessionStorage.getItem('google_token');
+    /*    const token = sessionStorage.getItem('google_token');
         const response = await fetch(`/api/inquiry/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(inquiry) */
+        const response = await callApi(`/api/inquiry/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(inquiry)
         });
