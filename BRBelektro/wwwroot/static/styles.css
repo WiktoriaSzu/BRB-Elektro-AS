@@ -785,7 +785,7 @@ margin-top:0.4rem;
 
 .projects-slider{
   position:relative;
-  max-width:72rem;
+  max-width:60rem;
   margin:0 auto;
   min-height: 28rem;
   overflow: hidden;
@@ -800,13 +800,13 @@ margin-top:0.4rem;
 .project{
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap:3rem;
+  gap:5rem;
   align-items: center;
   padding:0;
   position:absolute;
   opacity: 0;
   width:100%;
-  max-width: 40rem;
+ 
   opacity: 0;
   
 }
