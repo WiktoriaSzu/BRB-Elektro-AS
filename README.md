@@ -12,7 +12,7 @@
 
 A responsive website built for a real client, including a contact form with backend integration and email functionality.
 
-Live Demo: https://brbelektro.no
+
 
 ---
 
