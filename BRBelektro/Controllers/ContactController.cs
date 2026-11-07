@@ -1,12 +1,10 @@
 using BRBelektro.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 [ApiController]
 [Route("api/contact")]
 public class ContactController : ControllerBase
-{ 
+{
     private readonly EmailService _emailService = new EmailService();
 
     private readonly InquiryRepository _repository;
@@ -21,30 +19,24 @@ public class ContactController : ControllerBase
     {
         await _repository.Create(new Inquiry
         {
-            Name = request.Name,
-            Epost = request.Email,
-            Beskrivelse = request.Message,
-            Telefon = request.PhoneNumber,
-            Dato = DateOnly.FromDateTime(DateTime.Now)
+            Name = request.Name.Trim(),
+            Epost = request.Email.Trim(),
+            Beskrivelse = request.Message.Trim(),
+            Telefon = string.IsNullOrWhiteSpace(request.PhoneNumber) ? null : request.PhoneNumber.Trim(),
+            Dato = DateOnly.FromDateTime(DateTime.Now),
+            Status = "Ny",
+            Betaling = false
         });
 
-        try 
+        try
         {
             await _emailService.SendEmails(request.Email, request.Name, request.Message);
-        } 
+        }
         catch (Exception)
         {
-            // Something went wrong sending email. Keep going... 
+            // Something went wrong sending email. Keep going...
         }
-        
-        return Ok(new {message = "Sent successfully"});
-    }
-}
 
-public class ContactRequest
-{
-   public string Name {get; set;} = "";
-   public string Email {get; set;} = "";
-   public string Message {get; set;}  = "";
-   public int PhoneNumber {get; set;}
+        return Ok(new { message = "Sent successfully" });
+    }
 }

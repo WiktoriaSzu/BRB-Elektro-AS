@@ -17,7 +17,7 @@ namespace BRBelektro.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "10.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -55,8 +55,8 @@ namespace BRBelektro.Migrations
                         .HasColumnType("text")
                         .HasColumnName("status");
 
-                    b.Property<int?>("Telefon")
-                        .HasColumnType("integer")
+                    b.Property<string>("Telefon")
+                        .HasColumnType("text")
                         .HasColumnName("telefon");
 
                     b.HasKey("Id");
