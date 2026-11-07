@@ -1,31 +1,23 @@
-
-console.log("TEsting!")
-
-/* navbar injection */
+/* Loads the shared navbar and footer into every page */
 async function inject(id, url) {
   const el = document.getElementById(id);
-  if (!el) {
-    console.error("No element with id:", id)
-    return;
-  }
+  if (!el) return;
 
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
     el.innerHTML = await res.text();
-    console.log("setting innerHTML to: ", el.innerHTML)
   } catch (err) {
     console.error("Navbar/Footer inject failed:", err);
   }
 }
 
 (async () => {
-  await inject("navbar", "../partials/navbar.html");
-  await inject("footer", "../partials/footer.html");
-  console.log("injecting navbar!");
+  await inject("navbar", "/partials/navbar.html");
+  await inject("footer", "/partials/footer.html");
 })();
 
-// opening and closing the burger menu on mobile or small screen //
+/* Burger menu and services dropdown on small screens */
 document.addEventListener("click", (e) => {
   const burger = document.querySelector(".burger");
   const links = document.querySelector(".links");
@@ -35,17 +27,17 @@ document.addEventListener("click", (e) => {
 
   if (!links) return;
 
-  // toggle the menu when clicking //
+  // toggle the menu when clicking the burger
   if (e.target.closest(".burger")) {
     const open = links.classList.toggle("open");
-    // for accessibility - screen readers know when menu is open //
+    // lets screen readers know when the menu is open
     if (burger) {
       burger.setAttribute("aria-expanded", open);
     }
     return;
   }
 
-  /* toggling services */
+  // toggle the services dropdown
   if (e.target.closest(".menu-toggle")) {
     if (window.matchMedia("(max-width:40rem)").matches) {
       e.preventDefault();
@@ -56,21 +48,23 @@ document.addEventListener("click", (e) => {
     }
     return;
   }
-  // closes menu when a link is clicked //
+
+  // close the menu when a link is clicked
   if (e.target.tagName === "A" && links.contains(e.target)) {
     links.classList.remove("open");
     if (burger) {
       burger.setAttribute("aria-expanded", "false");
     }
-
     servicesWrapper?.classList.remove("open");
   }
 });
 
+/* Image and project sliders */
 document.querySelectorAll(".slider").forEach(slider => {
   const slides = slider.querySelectorAll(".slide");
   const leftBtn = slider.querySelector(".arrow.left");
   const rightBtn = slider.querySelector(".arrow.right");
+  if (slides.length === 0 || !leftBtn || !rightBtn) return;
 
   let current = 0;
 
@@ -88,45 +82,28 @@ document.querySelectorAll(".slider").forEach(slider => {
     current = (current - 1 + slides.length) % slides.length;
     showSlide(current);
   });
-
 });
 
-
-/* kompetanser modals */
-
+/* Certificate popup on the competences page */
 const modal = document.getElementById("certificateModal");
 const modalImg = document.getElementById("modalImage");
 const closeBtn = document.querySelector(".close-modal");
 
-console.log("Trying to add click on image")
-document.querySelectorAll(".cert-trigger").forEach(img => {
-  console.log("Adding click listener to image")
-  img.addEventListener("click", () => {
-    console.log("I was clicked!")
-    modal.style.display = "flex";
-    modalImg.src = img.dataset.cert;
+if (modal && modalImg) {
+  document.querySelectorAll(".cert-trigger").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.dataset.cert;
+    });
   });
-});
 
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
-
-modal.onclick = (e) => {
-  if (e.target === modal) {
+  closeBtn?.addEventListener("click", () => {
     modal.style.display = "none";
-  }
-};
+  });
 
-modal.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-
-fetch('/api/hello')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data.message);
-  })
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
