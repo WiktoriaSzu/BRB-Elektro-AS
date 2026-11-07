@@ -1,24 +1,42 @@
-<script src="https://accounts.google.com/gsi/client" async defer></script>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRB Elektro AS | Admin login</title>
+  <link rel="icon" href="/static/img/circle.png">
+  <link rel="stylesheet" href="/static/admin.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <main class="login-wrapper">
+    <div class="login-card">
+      <h1>Admin login</h1>
+      <p>Logg inn med Google for å se kundehenvendelser.</p>
 
-<div id="g_id_onload"
-  data-client_id="745795987028-doidv34ihcj04ofnkiq4chf787pn9fvl.apps.googleusercontent.com"
-  data-callback="handleCredentialResponse">
-</div>
-<div class="g_id_signin" data-type="standard"></div>
+      <div id="g_id_onload"
+        data-client_id="745795987028-doidv34ihcj04ofnkiq4chf787pn9fvl.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+      </div>
+      <div class="g_id_signin" data-type="standard"></div>
 
-<p id="error-msg" style="display:none; color:red;">
-    Your account doesn't have access to this application. 
-</p>
+      <div id="error-msg" class="error-message">
+        Kontoen din har ikke tilgang til denne siden.
+      </div>
+    </div>
+  </main>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('error') === 'unauthorized') {
-    document.getElementById('error-msg').style.display = 'block';
-  }
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('error') === 'unauthorized') {
+      document.getElementById('error-msg').style.display = 'block';
+    }
 
-  function handleCredentialResponse(response) {
-    // response.credential is the Google ID token (JWT)
-    sessionStorage.setItem('google_token', response.credential);
-    window.location.href = '/index2.html';
-  }
-</script>
+    function handleCredentialResponse(response) {
+      // response.credential is the Google ID token (JWT)
+      sessionStorage.setItem('google_token', response.credential);
+      window.location.href = '/admin.html';
+    }
+  </script>
+</body>
+</html>
