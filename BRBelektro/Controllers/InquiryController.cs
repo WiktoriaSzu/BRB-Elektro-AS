@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using BRBelektro.Data;
 using BRBelektro.Models;
-using Microsoft.EntityFrameworkCore;
-
-    
-using Microsoft.AspNetCore.Mvc;
+using BRBelektro.Repository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
+namespace BRBelektro.Controllers;
+
+// Admin API for customer inquiries. Only signed-in Google accounts listed in
+// Admin:AllowedEmails can use it.
 [ApiController]
 [Authorize(Policy = "AllowedEmails")]
 [Route("api/[controller]")]
@@ -25,8 +23,7 @@ public class InquiryController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Inquiry>>> GetAll()
     {
-        var inquiries = await _repository.GetAll();
-        return Ok(inquiries);
+        return Ok(await _repository.GetAll());
     }
 
     // GET: api/inquiry/5
@@ -53,9 +50,9 @@ public class InquiryController : ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult> Update(int id, [FromBody] Inquiry inquiry)
     {
-        var result = await _repository.Update(id, inquiry);
+        var found = await _repository.Update(id, inquiry);
 
-        if (result == 0)
+        if (!found)
             return NotFound();
 
         return NoContent();

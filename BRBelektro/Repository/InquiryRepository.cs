@@ -1,7 +1,8 @@
-
 using BRBelektro.Data;
 using BRBelektro.Models;
 using Microsoft.EntityFrameworkCore;
+
+namespace BRBelektro.Repository;
 
 public class InquiryRepository
 {
@@ -14,7 +15,7 @@ public class InquiryRepository
 
     public async Task<List<Inquiry>> GetAll()
     {
-        return await _context.Inquiries.ToListAsync();
+        return await _context.Inquiries.OrderByDescending(i => i.Id).ToListAsync();
     }
 
     public async Task<Inquiry?> GetById(int id)
@@ -28,10 +29,11 @@ public class InquiryRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<int> Update(int id, Inquiry updated)
+    // Returns false when no inquiry has the given id.
+    public async Task<bool> Update(int id, Inquiry updated)
     {
         var existing = await _context.Inquiries.FindAsync(id);
-        if (existing == null) return 0;
+        if (existing == null) return false;
 
         existing.Name = updated.Name;
         existing.Epost = updated.Epost;
@@ -41,7 +43,8 @@ public class InquiryRepository
         existing.Betaling = updated.Betaling;
         existing.Beskrivelse = updated.Beskrivelse;
 
-        return await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
+        return true;
     }
 
     public async Task Delete(int id)
