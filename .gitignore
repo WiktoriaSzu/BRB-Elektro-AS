@@ -1,4 +1,18 @@
+# Build output
 bin/
 obj/
-BRBElektro/bin/
-BRBElektro/obj/
+
+# IDE and editor files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Local settings and secrets
+.env
+appsettings.*.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
